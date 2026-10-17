@@ -6,6 +6,8 @@ AWS・Azure・Google Cloudの経験があり、Oracle Cloud Infrastructure（OCI
 
 **状態（2026-10-13）：初期文書を整備。OCIアカウントへのアクセス、リソース構築、試験受験は未実施。** Level 1/2/3は本リポジトリ独自の学習段階であり、Oracleの資格レベルではありません。Oracleとは独立した非公式学習資料で、試験合格を保証しません。
 
+**更新（2026-10-18）：** [Level 1のオフラインTerraformモデル](terraform/level1-network/README.md)と[Level 2検証計画](docs/level2-validation-plan.md)を追加しました。OCIリソースは構築していません。[検証記録](docs/task-118-validation.md)を参照してください。
+
 ## 5分で始める
 
 1. [範囲とロードマップ](docs/roadmap.md)を読む。
@@ -35,6 +37,9 @@ flowchart LR
 | [基礎ガイド](docs/foundations.md) | 7章の解説・シナリオ・理解確認・解答の要点 |
 | [他クラウド比較](docs/cloud-comparison.md) | AWS/Azure/GCPの知識を、同一仕様と誤認せず応用 |
 | [最初の演習](labs/01-offline-foundations.md) | オフラインで構成・権限・費用を検討。構築しない |
+| [Level 1 Terraformモデル](terraform/level1-network/README.md) | 隔離したprivate networkの例とオフライン検証。構築しない |
+| [Level 2検証計画](docs/level2-validation-plan.md) | 管理者操作の検証項目と証拠基準。実環境で未実施 |
+| [検証記録](docs/task-118-validation.md) | ツールの版、実施結果、未検証項目 |
 | [将来のハンズオン](labs/02-future-object-storage.md) | Object Storageの小規模演習計画。未実施 |
 | [費用と削除確認](docs/cost-and-cleanup.md) | 見積り、停止条件、残存資源、請求確認 |
 | [証拠テンプレート](templates/evidence.md) | 期待値と観測値、秘匿、費用・削除の証拠 |
@@ -49,4 +54,4 @@ flowchart LR
 
 実行証拠と仮説を分けます。`PLANNED`・`OFFLINE-ONLY`・`EXECUTED`・`FAILED`・`BLOCKED` は作業状態です。理解確認の合格だけで本番適合性は証明できません。認証情報、実アカウントの識別子、請求書、未加工の画面、Terraform stateをコミットしません。privateリポジトリでも秘密情報は保管しません。
 
-初期版には実行可能なTerraform、OCI認証情報、クラウドworkflow、自動クラウド操作はありません。資料と証拠の更新方法は[貢献ガイド](CONTRIBUTING.md)を参照してください。
+Level 1のTerraformモデルはオフライン検証用に追加しましたが、applyは未実施です。OCI認証情報、クラウドworkflow、自動クラウド操作はありません。資料と証拠の更新方法は[貢献ガイド](CONTRIBUTING.md)を参照してください。

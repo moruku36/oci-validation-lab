@@ -13,6 +13,7 @@ credentials*
 *.tfstate
 *.tfstate.*
 *.tfplan
+*.tfplan.json
 *.tfvars
 *.tfvars.json
 crash.log
