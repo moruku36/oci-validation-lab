@@ -12,7 +12,7 @@ Show that an operator can scope a disposable OCI change, predict its cost, apply
 |---|---|---|---|
 | Scope | Named tenancy, dedicated compartment, region, owner, approved resources and expiration | Redacted scope sheet and pre-run inventory | `PLANNED` |
 | Cost | Current price estimate, quotas, budget alert, maximum run time and stop condition | Dated estimate; budget alerts are not a hard cap | `PLANNED` |
-| IaC | Pinned provider, `fmt`, `validate`, static scope check, reviewed plan | CLI versions, redacted plan summary, reviewer | `OFFLINE-ONLY` for source checks |
+| IaC | Pinned provider, `fmt`, `validate`, static source and plan-scope checks, reviewed plan | CLI versions, redacted plan summary, reviewer | `OFFLINE-ONLY` for source and synthetic plan checks |
 | Access | Least-privilege identity and no public VM management | Policy review and effective access test | `PLANNED` |
 | Network | Private subnet, no unapproved ingress/egress or routes, approved connectivity test | Configuration and independent OCI observations | `OFFLINE-ONLY` for mock assertions; live check `PLANNED` |
 | Change | Only approved resource IDs and tags; separate apply approval | Before/after inventory and change record | `PLANNED` |
@@ -21,6 +21,8 @@ Show that an operator can scope a disposable OCI change, predict its cost, apply
 | Cleanup | Destroy only owned resources, inventory residuals, later billing review | Destroy record, fresh inventory and billing check | `PLANNED` |
 
 The offline tests assert the planned private CIDRs, public-IP prohibition, zero security rules, and zero routes. They cannot demonstrate OCI API behavior, isolation, effective IAM, cost, drift, recovery, or deletion. Record those as `UNVERIFIED` until a separately authorized run provides observed evidence.
+
+The [plan scope checker](../scripts/check_plan_scope.py) can inspect the JSON form of a saved Terraform plan after a separately approved operator creates one. It accepts only the four Level 1 resource addresses and pure create or pure delete actions. Run `python scripts/check_plan_scope.py create <private-plan-json>` (or `destroy`) from the repository root. Keep the plan JSON in a private local path; it may contain sensitive values. The script prints only generic findings and does not call OCI. Passing is a review aid, not permission to apply or proof that every attribute is safe; review the plan and current inventory independently.
 
 ## Suggested progression
 

@@ -34,4 +34,6 @@ No execution is authorized by this repository. Before any real run, obtain a sep
 
 For a separately approved run, the operator would initialize Terraform, produce and review a saved plan, then apply that exact plan. After verification, the operator would review a destroy plan, destroy only resources owned by this state, and independently check the same region and compartment for remaining lab resources and delayed charges. Terraform state deletion alone is not cleanup evidence. If a resource is shared, pre-existing, or uncertain, stop and resolve ownership before destroy. See [cost and cleanup](../../docs/cost-and-cleanup.md) and [evidence template](../../templates/evidence.md).
 
+For the approved saved plan, convert it locally to JSON with `terraform show -json` and run the [plan scope checker](../../scripts/check_plan_scope.py) before the human review. Plan JSON may contain secrets or account identifiers; keep it outside Git and delete it under the agreed evidence policy. The checker does not inspect every attribute or authorize execution.
+
 No OCI resource has been created or destroyed in this task. `RESOURCE-CLEANUP: NOT-APPLICABLE`; `BILLING: NOT-MEASURED`.
