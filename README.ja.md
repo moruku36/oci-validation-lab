@@ -8,7 +8,7 @@ AWS・Azure・Google Cloudの経験があり、Oracle Cloud Infrastructure（OCI
 
 **更新（2026-10-18）：** [Level 1のオフラインTerraformモデル](terraform/level1-network/README.md)と[Level 2検証計画](docs/level2-validation-plan.md)を追加しました。OCIリソースは構築していません。[検証記録](docs/task-118-validation.md)を参照してください。
 
-## 5分で始める
+**更新（2026-10-23の実機演習）：** 東京リージョンで限定したVCNとprivate subnetをOCI Consoleから作成・削除しました。[公開用の実施記録](evidence/2026-10-23-level1-network.md)には観測結果と未確認事項を分けています。VM・IAM・Terraformの実機操作とLevel 1全体の完了は未実施です。請求確定額と匿名化済みスクリーンショットはありません。\n\n## 5分で始める
 
 1. [範囲とロードマップ](docs/roadmap.md)を読む。
 2. [最初のオフライン演習](labs/01-offline-foundations.md)でtenancy・compartment・region・VCNを描く。
