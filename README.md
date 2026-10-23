@@ -8,7 +8,9 @@ A learning and validation repository for engineers experienced with AWS, Azure, 
 
 **Update (2026-10-18):** Added an [offline Level 1 Terraform model](terraform/level1-network/README.md) and [Level 2 validation plan](docs/level2-validation-plan.md). No OCI resources were deployed. See the [validation record](docs/task-118-validation.md).
 
-**Update (2026-10-23 live exercise):** A narrowly scoped VCN and private subnet were created and deleted through the OCI Console in Tokyo. The [public record](evidence/2026-10-23-level1-network.md) separates observed results from unknowns. VM, IAM, live Terraform deployment, and completion of Level 1 remain unverified. Final billing and redacted screenshots are unavailable.\n\n## Five-minute start
+**Update (2026-10-23 live exercise):** A narrowly scoped VCN and private subnet were created and deleted through the OCI Console in Tokyo. The [public record](evidence/2026-10-23-level1-network.md) separates observed results from unknowns. VM, IAM, live Terraform deployment, and completion of Level 1 remain unverified. Final billing and redacted screenshots are unavailable.
+
+## Five-minute start
 
 1. Read [scope and roadmap](docs/roadmap.md).
 2. Draw a tenancy, compartment, region, and VCN using [the first offline lab](labs/01-offline-foundations.md).
